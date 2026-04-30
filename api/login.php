@@ -1,4 +1,5 @@
 <?php
+// Inicio de sesion por usuario o correo
 require_once __DIR__ . '/bootstrap.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -12,7 +13,7 @@ if ($identity === '' || $password === '') {
     json_response(['ok' => false, 'message' => 'Completa usuario/correo y contrasena'], 422);
 }
 
-$stmt = $conn->prepare('SELECT id, nombre_usuario, nombre_completo, password_hash FROM usuarios WHERE nombre_usuario = ? OR email = ? LIMIT 1');
+$stmt = $conn->prepare('SELECT id, nombre_usuario, nombre_completo, password_hash, foto_perfil FROM cuentas WHERE nombre_usuario = ? OR email = ? LIMIT 1');
 $stmt->bind_param('ss', $identity, $identity);
 $stmt->execute();
 $user = $stmt->get_result()->fetch_assoc();
@@ -31,6 +32,8 @@ json_response([
     'user' => [
         'id' => (int) $user['id'],
         'username' => $user['nombre_usuario'],
-        'fullname' => $user['nombre_completo']
+        'fullname' => $user['nombre_completo'],
+        'photo_url' => public_photo_url($user['foto_perfil'] ?? null)
     ]
 ]);
+

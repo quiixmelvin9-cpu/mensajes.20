@@ -16,4 +16,4 @@
 - `assets/app.js`: logica cliente (registro, login, mensajes).
 - `db.php`: conexion MySQL.
 - `api/*.php`: endpoints para autenticar y mensajeria.
-- `database.sql`: tablas `usuarios` y `mensajes`.
+- `database.sql`: BD `bd_mensajeria_nueva` con tablas `cuentas` y `chat_mensajes`.

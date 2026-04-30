@@ -10,12 +10,14 @@ session_start();
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+    <!-- Fondo decorativo -->
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
     <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema">Modo oscuro</button>
 
     <main class="container">
         <section id="authSection" class="card auth-card hidden">
+            <!-- Panel de acceso y registro -->
             <h1 class="brand">Mensajes<span>Gram</span></h1>
             <p class="subtitle">Conecta con tus contactos en tiempo real</p>
 
@@ -48,13 +50,25 @@ session_start();
         </section>
 
         <section id="chatSection" class="card chat-card hidden">
+            <!-- Barra lateral con usuario actual y lista de contactos -->
             <aside class="sidebar">
                 <div class="sidebar-head">
-                    <div>
+                    <div class="me-wrap">
+                        <div id="currentAvatar" class="avatar lg"><span class="avatar-core placeholder"></span></div>
                         <p class="small">Conectado como</p>
                         <h2 id="currentUser">@usuario</h2>
                     </div>
-                    <button id="logoutBtn" class="btn-ghost">Salir</button>
+                    <div class="actions-wrap">
+                        <button id="uploadPhotoBtn" type="button" class="btn-ghost btn-file">Foto</button>
+                        <input id="profilePhotoInput" type="file" accept="image/png,image/jpeg,image/webp" class="hidden-file">
+                        <button id="logoutBtn" class="btn-ghost">Salir</button>
+                    </div>
+                </div>
+                <div class="profile-preview">
+                    <p class="profile-preview-label">Foto de perfil</p>
+                    <div id="currentAvatarCard" class="avatar-preview">
+                        <span class="avatar-placeholder"></span>
+                    </div>
                 </div>
 
                 <h3>Usuarios</h3>
@@ -62,16 +76,20 @@ session_start();
             </aside>
 
             <section class="chat-panel">
+                <!-- Zona principal de conversacion -->
                 <header class="chat-header">
+                    <div id="peerAvatar" class="avatar sm"></div>
                     <h3 id="chatTitle">Selecciona una cuenta</h3>
                 </header>
 
                 <div id="messagesBox" class="messages-box"></div>
 
                 <form id="sendForm" class="send-form">
+                    <button id="emojiBtn" class="btn-ghost icon-btn" type="button" aria-label="Abrir emojis">&#128522;</button>
                     <input id="messageInput" type="text" placeholder="Escribe un mensaje..." autocomplete="off" required>
                     <button type="submit" class="btn-primary">Enviar</button>
                 </form>
+                <div id="emojiPanel" class="emoji-panel hidden"></div>
                 <p id="chatMessage" class="message"></p>
             </section>
         </section>

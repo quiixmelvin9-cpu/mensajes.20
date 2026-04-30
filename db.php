@@ -1,9 +1,10 @@
 <?php
 
+// Configuracion de conexion MySQL
 $Servidor = "localhost";
 $Usuario = "root";
 $password = "";
-$BaseDeDatos = "bd_usuarios";
+$BaseDeDatos = "bd_mensajeria_nueva";
 
 // crear conexion
 $conn = new mysqli($Servidor, $Usuario, $password, $BaseDeDatos);
