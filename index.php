@@ -13,12 +13,13 @@ session_start();
     <!-- Fondo decorativo -->
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
-    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema">Modo oscuro</button>
+    <div class="bg-orb orb-3"></div>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema">🌙 Oscuro</button>
 
     <main class="container">
         <section id="authSection" class="card auth-card hidden">
             <!-- Panel de acceso y registro -->
-            <h1 class="brand">Mensajes<span>Gram</span></h1>
+            <h1 class="brand">💬 Mensajes<span>Gram</span></h1>
             <p class="subtitle">Conecta con tus contactos en tiempo real</p>
 
             <div class="tabs">
