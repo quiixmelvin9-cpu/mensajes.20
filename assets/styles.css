@@ -127,6 +127,13 @@ body {
 
 label { font-size: 0.9rem; color: var(--ink-muted); margin-top: 6px; }
 
+input,
+label {
+    display: block; /* Obliga a que cada uno use su propia linea */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 input {
     width: 100%;
     border: 1px solid var(--line);

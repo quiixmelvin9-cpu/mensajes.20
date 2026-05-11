@@ -2,6 +2,8 @@
 session_start();
 $cssVersion = file_exists(__DIR__ . '/assets/styles.css') ? filemtime(__DIR__ . '/assets/styles.css') : time();
 $jsVersion = file_exists(__DIR__ . '/assets/app.js') ? filemtime(__DIR__ . '/assets/app.js') : time();
+$basePath = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '')), '/');
+$assetBase = ($basePath === '' || $basePath === '.') ? '' : $basePath;
 ?>
 <!doctype html>
 <html lang="es">
@@ -9,7 +11,7 @@ $jsVersion = file_exists(__DIR__ . '/assets/app.js') ? filemtime(__DIR__ . '/ass
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensajeria Estilo Instagram</title>
-    <link rel="stylesheet" href="assets/styles.css?v=<?php echo $cssVersion; ?>">
+    <link rel="stylesheet" href="<?php echo $assetBase; ?>/assets/styles.css?v=<?php echo $cssVersion; ?>">
 </head>
 <body>
     <!-- Fondo decorativo -->
@@ -98,6 +100,6 @@ $jsVersion = file_exists(__DIR__ . '/assets/app.js') ? filemtime(__DIR__ . '/ass
         </section>
     </main>
 
-    <script src="assets/app.js?v=<?php echo $jsVersion; ?>"></script>
+    <script src="<?php echo $assetBase; ?>/assets/app.js?v=<?php echo $jsVersion; ?>"></script>
 </body>
 </html>
