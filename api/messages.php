@@ -22,7 +22,7 @@ if ($method === 'GET') {
         json_response(['ok' => false, 'message' => 'El usuario destino no existe'], 404);
     }
 
-    $whereClause = 'WHERE (remitente_id = ? AND destinatario_id = ?) OR (remitente_id = ? AND destinatario_id = ?)';
+    $whereClause = 'WHERE ((remitente_id = ? AND destinatario_id = ?) OR (remitente_id = ? AND destinatario_id = ?))';
     $params = [$authUserId, $peerId, $peerId, $authUserId];
     $types = 'iiii';
 
@@ -161,4 +161,3 @@ if ($method === 'POST') {
 }
 
 json_response(['ok' => false, 'message' => 'Metodo no permitido'], 405);
-

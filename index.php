@@ -1,5 +1,7 @@
-<?php
+﻿<?php
 session_start();
+$cssVersion = file_exists(__DIR__ . '/assets/styles.css') ? filemtime(__DIR__ . '/assets/styles.css') : time();
+$jsVersion = file_exists(__DIR__ . '/assets/app.js') ? filemtime(__DIR__ . '/assets/app.js') : time();
 ?>
 <!doctype html>
 <html lang="es">
@@ -7,19 +9,19 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensajeria Estilo Instagram</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css?v=<?php echo $cssVersion; ?>">
 </head>
 <body>
     <!-- Fondo decorativo -->
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
     <div class="bg-orb orb-3"></div>
-    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema">🌙 Oscuro</button>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema">Modo oscuro</button>
 
     <main class="container">
         <section id="authSection" class="card auth-card hidden">
             <!-- Panel de acceso y registro -->
-            <h1 class="brand">💬 Mensajes<span>Gram</span></h1>
+            <h1 class="brand">Mensajes<span>Gram</span></h1>
             <p class="subtitle">Conecta con tus contactos en tiempo real</p>
 
             <div class="tabs">
@@ -96,6 +98,6 @@ session_start();
         </section>
     </main>
 
-    <script src="assets/app.js"></script>
+    <script src="assets/app.js?v=<?php echo $jsVersion; ?>"></script>
 </body>
 </html>
