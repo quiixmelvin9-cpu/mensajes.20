@@ -134,6 +134,14 @@ label {
     margin-bottom: 10px;
 }
 
+/* Refuerzo para evitar que algun estilo externo los ponga inline */
+input,
+label {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 10px !important;
+}
+
 input {
     width: 100%;
     border: 1px solid var(--line);
