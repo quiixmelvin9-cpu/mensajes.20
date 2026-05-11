@@ -3,7 +3,7 @@
 // Configuracion de conexion MySQL
 $Servidor = "localhost";
 $Usuario = "root";
-$password = "";
+$password = "123456";
 $BaseDeDatos = "bd_mensajeria_nueva";
 
 // crear conexion
