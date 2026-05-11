@@ -11,6 +11,7 @@ $assetBase = ($basePath === '' || $basePath === '.') ? '' : $basePath;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensajeria Estilo Instagram</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="<?php echo $assetBase; ?>/assets/styles.css?v=<?php echo $cssVersion; ?>">
 </head>
 <body>
