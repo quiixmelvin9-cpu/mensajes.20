@@ -458,3 +458,19 @@ input {
     margin-bottom: 15px;
     box-sizing: border-box; /* Evita que el input se salga del cuadro */
 }
+
+/* Fuerza la separación de elementos incluso si hay errores de JS */
+.login-form, .login-container, form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+}
+
+input {
+    display: block !important;
+    margin-bottom: 10px !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+}
