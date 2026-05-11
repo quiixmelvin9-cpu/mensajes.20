@@ -1,4 +1,18 @@
-﻿/* Esto fuerza el diseño sin importar qué diga el HTML antiguo */
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Esto evita que los inputs se amontonen */
+}
+
+body {
+    background-color: #0f111a !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Esto fuerza el diseño sin importar qué diga el HTML antiguo */
 body {
     background-color: #0f111a; /* Fondo oscuro */
     font-family: 'Plus Jakarta Sans', sans-serif;
